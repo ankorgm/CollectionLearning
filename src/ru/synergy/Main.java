@@ -1,19 +1,31 @@
 package ru.synergy;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
 
-        Cat[] cats = new Cat[3];
+        Cat[] cats = new Cat[4];
         cats[0] = new Cat("Tomas");
         cats[1] = new Cat("Бегемот");
         cats[2] = new Cat("Филлип Маркович");
+        cats[3] = new Cat("Котяра");
 
-        cats[1] = null;
-
+        //cats[1] = null;
 
 
         System.out.println(Arrays.toString(cats));
+
+        ArrayList<Cat> catslist = new ArrayList<>();
+        for (Cat cat : cats){
+            catslist.add(cat);
+        }
+
+        catslist.add(new Cat("Барсик"));
+        System.out.println(catslist.toString());
+
     }
+
+
 }
