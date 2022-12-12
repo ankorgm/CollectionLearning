@@ -125,14 +125,13 @@ public class Main {
         states.add("Italy");
         states.add("Italy");
         boolean isaddad = states.add("Italy");
-        System.out.println("Italy is added" + isaddad );
+        System.out.println("Italy is added" + isaddad);
         System.out.println("Set contains:" + states.size());
 
         System.out.println(states);
 
         states.remove("Germany");
         System.out.println(states);
-
 
 
         HashSet<Cat> catHashSet = new HashSet<>(catslist);
@@ -143,8 +142,35 @@ public class Main {
         System.out.println(catTreeSet);
 
 
-      // Map
+        // Map
 
+        Map<Integer, String> statesMap = new HashMap<>();
+
+        statesMap.clear();
+        ;
+        statesMap.put(1, "Germany");
+        ;
+        statesMap.put(2, "Spain");
+        ;
+        statesMap.put(3, "France");
+        ;
+        statesMap.put(4, "Italy");
+        ;
+
+
+        System.out.println(statesMap.keySet());
+
+        statesMap.remove(2);
+
+        for (Map.Entry<Integer, String> item : statesMap.entrySet()){
+            System.out.printf(  "|Key:   %d   | value:   %s \n", item.getKey(), item.getValue());
+
+        }
+
+
+
+        String first = statesMap.get(2);
+        System.out.println(first);
 
 
     }
