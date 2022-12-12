@@ -3,6 +3,7 @@ package ru.synergy;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -86,20 +87,35 @@ public class Main {
         System.out.println(cars);
 
         System.out.println(cars.pollFirst());
-
-
         System.out.println(cars);
 
 
+        // ArrayList vs LinkedList
+
+        List<Integer> list = new LinkedList<>();
+        for(int i = 0; i<5000000; i++){
+            list.add(new Integer(i));
+        }
+
+        long start = System.currentTimeMillis();
+        for(int i=0; i<100; i++) {
+            list.add(2000000, Integer.MAX_VALUE);
+        }
+
+        System.out.println("Время работы для LinkedList в (миллисекундах)" + (System.currentTimeMillis()-start));
 
 
+        List<Integer> listarray = new ArrayList<>();
+        for(int i = 0; i<5000000; i++){
+            listarray.add(new Integer(i));
+        }
 
+        start = System.currentTimeMillis();
+        for(int i=0; i<100; i++) {
+            listarray.add(2000000, Integer.MAX_VALUE);
+        }
 
-
-
-
-
-
+        System.out.println("Время работы для ArrayList в (миллисекундах)" + (System.currentTimeMillis()-start));
 
 
     }
